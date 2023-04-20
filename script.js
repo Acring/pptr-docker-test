@@ -13,8 +13,11 @@ const browser = await puppeteer.launch({
 });
  
 const page = await browser.newPage();
-await page.goto("https://example.com");
-const ss = await page.screenshot({path: "/root/liuzhen/pptr/screenshot.png"});
+await page.goto("https://baidu.com");
+// 检查是否存在 input
+const input = await page.$("input");
+// const ss = await page.screenshot({path: "/root/liuzhen/pptr/screenshot.png"});
+console.log('finish');
  
 await page.close();
 await browser.close();
