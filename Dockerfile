@@ -24,7 +24,9 @@ RUN npm i ./puppeteer-browsers-latest.tgz ./puppeteer-core-latest.tgz ./puppetee
     && rm ./puppeteer-browsers-latest.tgz ./puppeteer-core-latest.tgz ./puppeteer-latest.tgz \
     && (node -e "require('child_process').execSync(require('puppeteer').executablePath() + ' --credits', {stdio: 'inherit'})" > THIRD_PARTY_NOTICES)
 
-CMD ["google-chrome-stable"]
-
 # 拷贝当前项目下的所有文件
 COPY . .
+
+CMD ["google-chrome-stable"]
+
+
